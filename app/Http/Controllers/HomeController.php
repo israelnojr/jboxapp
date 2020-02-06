@@ -23,6 +23,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('pages.home');
+    }
+
+    public function upload()
+    {
+        return view('pages.upload');
+    }
+
+    public function watch()
+    {
+        return view('pages.watch');
+    }
+
+    public function channel()
+    {
+        return view('pages.channel');
     }
 }

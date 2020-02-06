@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/upload', 'HomeController@upload')->name('upload');
+Route::get('/watch', 'HomeController@watch')->name('watch');
+Route::get('/channel', 'HomeController@channel')->name('channel');

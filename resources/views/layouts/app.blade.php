@@ -21,12 +21,12 @@
 <body>
     <div id="app">
         <main class="py-4">
-        @if(Request::is('home'))
+        @if(Request::is('admin*'))
             @include('layouts.inc.sidebar')
             @include('layouts.inc.header')
         @endif
             @yield('content')
-        @if(Request::is('home'))
+        @if(Request::is('admin*'))
             @include('layouts.inc.footer')
         @endif
         </main>
