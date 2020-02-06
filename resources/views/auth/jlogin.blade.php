@@ -24,7 +24,7 @@
     <div id="c" class="container-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-md-5" style="margin-top: 65px;">
+                <div class="col-md-5">
                     <br><br>
                     <h1 class="jbx-g alf">WELCOME TO JBOX</h1>
                     <p" style="font-size:20px" class="jbx-g alf">Decentralized video streaming platform.</p>

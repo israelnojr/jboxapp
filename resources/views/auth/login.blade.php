@@ -1,64 +1,56 @@
-@extends('layouts.app')
-@section('content')
-    <div class="single-widget-container">
-        <section class="widget login-widget">
-            <header class="text-align-center">
-                <h4>{{ __('Login to your account')}}</h4>
-            </header>
-            <div class="body">
-                <form method="POST" action="{{ route('login') }}"  class="no-margin"action="index.html" method="get">
-                    @csrf
-                    <fieldset>
-                        <div class="form-group">
-                            <label for="email" >{{ __('Email')}}</label>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="fa fa-user"></i>
-                                </span>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror input-lg input-transparent" 
-                                name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
-                            </div>
-                        </div>
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('jboximage/favicon.ico')}}" />
+        <link rel="icon" type="image/png" href="{{ asset('jboximage/favicon-32x32.png')}}" sizes="32x32" />
+        <link rel="icon" type="image/png" href="{{ asset('jboximage/favicon-16x16.png')}}" sizes="16x16" />
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-                        <div class="form-group">
-                            <label for="password" >{{ __('Password')}}</label>
-
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="fa fa-lock"></i>
-                                </span>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror input-lg input-transparent" 
-                                name="password" value="{{ old('password') }}" autocomplete="password" autofocus>
+        <title>{{ config('app.name', 'JBOXCOIN') }}</title>
+        <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('jboximage/favicon.ico')}}" />
+        <link rel="icon" type="image/png" href="{{ asset('jboximage/favicon-32x32.png')}}" sizes="32x32" />
+        <link rel="icon" type="image/png" href="{{ asset('jboximage/favicon-16x16.png')}}" sizes="16x16" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}" />
+        <link rel="stylesheet" href="{{ asset('css/mycustom.css')}}" />
+    </head>
+    <body>
+        <div id="l" class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="mt mbb col-md-6">
+                        <br><br><br><br>
+                        <div class="card pdd">
+                            <h3 class="mbb jbx-gr">{{ __('User login')}}</h3>
+                            <form method="post" class="form-group" action="{{ route('login')}}">
+                                @csrf
+                                <label class="jbx-gr">{{ __('Email')}}</label>
+                                <input type="text" name="email" placeholder="Email" class="form-control form-control-lg jbx-grbg mb" />
+                                <!-- <label class="jbx-gr">{{ __('Username')}}</label>
+                                <input type="text" name="username" placeholder="Username" class="form-control form-control-lg jbx-grbg mb" /> -->
+                                <label class="jbx-gr">{{ __('Password')}}</label>
+                                <input type="password" name="password" placeholder="Password" class="form-control form-control-lg jbx-grbg mb" />
+                                <div style="text-align:right" class="jbx-gr">
+                                <a href="recover-password" class="jbx-gr ml">Forgot Password ?</a> </div>
+                                <button type="submit"  class="btn btn-warning btn-lg mb">Log in </button>
                                 
-                            </div>
+                                <div><span class="jbx-gr">New to Jbox ? </span>
+                                    <a href="{{ route('register')}}" class="jbx-gr ml">Sign up</a>
+                                </div>
+                            </form>
                         </div>
-
-                        <div class="form-group">
-                            <div class="d-flex">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                <label class="form-check-label" for="remember">
-                                    {{ __('Remember Me') }}
-                                </label>
-                            </div>
                     </div>
-                    </fieldset>
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-block btn-lg btn-danger">
-                            <span class="small-circle"><i class="fa fa-caret-right"></i></span>
-                            <small>{{ __('Sign In')}}</small>
-                        </button>
-                        @if (Route::has('password.request'))
-                            <a class="forgot" href="{{ route('password.request')}}">{{ __('Forgot Username or Password?')}}</a>
-                        @endif
-                    </div>
-                </form>
-            </div>
-            <footer>
-                <div class="facebook-login">
-                    <a href=" {{ route('register') }} "><span> {{ __('Don\'t have an account?')}}</span></a>
                 </div>
-            </footer>
-        </section>
-    </div>
-@endsection
+            </div>
+        </div>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
