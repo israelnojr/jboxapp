@@ -396,7 +396,7 @@ Version: 1.0
     z-index: 99;
 }
  .osahan-nav {
-    box-shadow: 0 0 10px #171b20;
+    box-shadow: 0 0 4px #e9ecef;
      padding: 0;
 }
  .osahan-navbar-search .form-control {

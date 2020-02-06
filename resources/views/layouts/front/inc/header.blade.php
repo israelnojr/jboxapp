@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand navbar-light static-top osahan-nav sticky-top" style="background: #212529;">
+<nav class="navbar navbar-expand navbar-light static-top osahan-nav sticky-top" style="background: #000;">
          &nbsp;&nbsp; 
          <button class="btn btn-link btn-sm text-secondary order-1 order-sm-0" id="sidebarToggle">
          <i class="fas fa-bars"></i>
          </button> &nbsp;&nbsp;
-         <a class="navbar-brand mr-1" href="{{('/')}}"><img class="img-fluid" alt="" src="{{ asset('front/img/logo.png')}}"></a>
+         <a class="navbar-brand mr-1" href="{{('/')}}"><img class="img-fluid" alt="" src="{{ asset('jboximage/logo-small.png')}}"></a>
          <!-- Navbar Search -->
          <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0 osahan-navbar-search">
             <div class="input-group">
